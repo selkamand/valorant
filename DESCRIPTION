@@ -14,3 +14,5 @@ RoxygenNote: 7.2.0
 Imports: 
     rlang,
     utils
+URL: https://github.com/selkamand/valorant
+BugReports: https://github.com/selkamand/valorant/issues
