@@ -1,9 +1,6 @@
 val_strats_df <- function(){
   strats_df <- utils::read.csv(val_strat_filepath(), sep = "\t", header = TRUE)
 
-  if(!all(c("Title", "Description", "Side", "Contributor") %in% colnames(strats_df)))
-    stop('Strats dataframe must contain the following columns: c("Title", "Description", "Side", "Contributor")')
-
   return(strats_df)
 }
 
@@ -11,9 +8,6 @@ val_strats_df <- function(){
 val_strat_filepath <- function(){
   path = system.file(package='valorant', 'strat_roulette.tsv')
 
-  if(!file.exists(path)) {
-    stop('Could not find file at path [', system.file(package='valorant', 'strat_roulette2.tsv'), ']. please report this error message to app developer by creating a new github issue')
-  }
   return(path)
 }
 
