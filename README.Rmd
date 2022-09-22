@@ -37,7 +37,9 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 library(valorant)
 
+# Get single strat for val roulette (don't format with html tags)
+val_strat(html = FALSE)
 
-# Get strats for val roulette
-val_strats()
+# Get list of strats for val roulette
+val_strats(html = FALSE)
 ```
