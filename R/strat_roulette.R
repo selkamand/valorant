@@ -14,9 +14,12 @@ val_strat_filepath <- function(){
 val_strats_dataframe <- function(side = c('Both', 'Attacking', 'Defending'), seed = NULL){
   side = rlang::arg_match(side)
 
-#  browser()
+  # If user wants attacking strats - include those that can be either attacking/defending. Same if requesting defender strats
+  if(side == "Attacking" | side == "Defending")
+    side <- c(side, "Both")
+
   strats_df <- val_strats_df()
-  strats_filtered <- strats_df[strats_df$Side == side,]
+  strats_filtered <- strats_df[strats_df$Side %in% side,]
 
   if(!is.null(seed))
     set.seed(seed = seed)
