@@ -18,6 +18,13 @@ test_that("val_strats function works", {
 })
 
 test_that("Side is either Attacking, Defending, Or Both", {
-
   expect_true(all(val_strats_df()[['Side']] %in% c('Attacking', 'Defending', 'Both')))
-  })
+})
+
+
+test_that("val_strat function works", {
+  expect_error(val_strat(), NA)
+
+  expect_true(is.character(val_strat()))
+  expect_true(length(val_strat()) == 1)
+})
