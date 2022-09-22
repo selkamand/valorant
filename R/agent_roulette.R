@@ -70,7 +70,7 @@ agent_roulette_two_teams <- function(attacking_nplayers = 5, defending_nplayers 
 #'
 #' @examples
 #' agent_roulette_two_teams_visualise()
-agent_roulette_customs_visualise <- function(attacking_nplayers = 5, defending_nplayers =5, agents_to_exclude = NULL, titlesize = 30, textsize = 12){
+agent_roulette_customs_visualise <- function(attacking_nplayers = 5, defending_nplayers =5, agents_to_exclude = NULL, titlesize = 20, textsize = 6){
   df = agent_roulette_two_teams(attacking_nplayers = attacking_nplayers, defending_nplayers =defending_nplayers, agents_to_exclude = agents_to_exclude)
 
   ggplot2::ggplot(
