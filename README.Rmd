@@ -32,7 +32,8 @@ remotes::install_github('selkamand/valorant')
 
 ## Usage
 
-This is a basic example which shows you how to solve a common problem:
+### Strat roulette
+
 
 ```{r example}
 library(valorant)
@@ -43,3 +44,10 @@ val_strat(html = FALSE)
 # Get list of strats for val roulette
 val_strats(html = FALSE)
 ```
+
+### Agent Roulette
+
+```{r}
+agent_roulette_customs_visualise()
+```
+
