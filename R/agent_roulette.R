@@ -62,13 +62,15 @@ agent_roulette_two_teams <- function(attacking_nplayers = 5, defending_nplayers 
 #' @param attacking_nplayers number of players on attacking team
 #' @param defending_nplayers number of players on defending team
 #' @param agents_to_exclude agents to exclude from the selection
+#' @param titlesize size of title text
+#' @param textsize size of agent name text
 #'
 #' @return ggplot2
 #' @export
 #'
 #' @examples
 #' agent_roulette_two_teams_visualise()
-agent_roulette_customs_visualise <- function(attacking_nplayers = 5, defending_nplayers =5, agents_to_exclude = NULL){
+agent_roulette_customs_visualise <- function(attacking_nplayers = 5, defending_nplayers =5, agents_to_exclude = NULL, titlesize = 30, textsize = 12){
   df = agent_roulette_two_teams(attacking_nplayers = attacking_nplayers, defending_nplayers =defending_nplayers, agents_to_exclude = agents_to_exclude)
 
   ggplot2::ggplot(
@@ -77,14 +79,14 @@ agent_roulette_customs_visualise <- function(attacking_nplayers = 5, defending_n
   ) +
     ggplot2::geom_tile(colour = "black", show.legend = FALSE) +
     ggplot2::scale_fill_manual(values = c("ATTACKERS" = "#985c71", "DEFENDERS" = "#5d9aaf")) +
-    ggplot2::geom_text(colour = "white", fontface = "bold") +
+    ggplot2::geom_text(colour = "white", fontface = "bold", size =textsize) +
     ggplot2::facet_wrap(facets = "team", ncol = 2, scales = "free_x") +
     ggplot2::theme_minimal() +
     ggplot2::theme(
       panel.grid.major = ggplot2::element_blank(),
       panel.grid.minor = ggplot2::element_blank(),
       strip.background = ggplot2::element_rect(fill = c("black")),
-      strip.text = ggplot2::element_text(colour = "white", face = "bold", size = 12),
+      strip.text = ggplot2::element_text(colour = "white", face = "bold", size = titlesize, margin = ggplot2::margin(0.5,0.2,0.5,0.2, "cm")),
       axis.text = ggplot2::element_blank(),
       axis.title = ggplot2::element_blank()
       )
